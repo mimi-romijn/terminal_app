@@ -161,19 +161,17 @@ when "M"
     user_age_rule_min = (user_age / 2) + 7
     user_age_rule_max = (user_age - 7) * 2
     matched_profiles = female_profiles.filter do | female_profile |
-        puts female_profile[:name]
-        puts female_profile[:age]
-        puts female_profile[:star_sign]
+        # puts female_profile[:name]
+        # puts female_profile[:age]
+        # puts female_profile[:star_sign]
         age_match = female_profile[:age] >= user_age_rule_min && female_profile[:age] <= user_age_rule_max
+        # age_match = female_profile[:age] >= user_age_rule_min && female_profile[:age] <= user_age_rule_max
         star_sign_match = female_profile[:star_sign] == "Taurus"
         star_sign_match = user_star_sign_matches.include? female_profile[:star_sign]
         puts star_sign_match
-       
-        return age_match && star_sign_match
-
-    
+        puts"You've been matched with"
+        # return age_match && star_sign_match 
     end
-    puts "You've been matched with" + matched_profiles
     
 
 when "F"
