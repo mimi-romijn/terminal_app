@@ -2,33 +2,41 @@
 
 system("clear")
 
-def welcome_and_user_input
-puts "\nListen up if you're looking to fall in love, you want to start dating or you're ready to start a relationship you're at the right place"
-# Gets users gender so can be matched with someone of the opposite gender. Note MVP is not inclusive, it is purley for hetero singles.
-puts = "Gender"
-    puts"M"
-    puts"F"
-    puts"O"
-    user_gender = gets.chomp
-    user_gender.capitalize
+# def welcome_and_user_input_gender
+# puts "\nListen up if you're looking to fall in love, you want to start dating or you're ready to start a relationship you're at the right place!\nPlease select your gender."
+# # Gets users gender so can be matched with someone of the opposite gender. Note MVP is not inclusive, it is purley for hetero singles.
+# puts = "Gender"
+#     puts"M"
+#     puts"F"
+#     puts"O"
+#     user_gender = gets.chomp
+#     user_gender.capitalize
+
+#     #  input_valid = Validators.validate_input(welcome_and_user_input_gender)
+#     #  if !input_valid
+#     #     puts "Invalid. Try Again"
+#     # end
+# end
+
+# def user_age_and_star_sign
+#     puts "\nHow old are you?"
+#     user_age = gets.chomp.to_i
     
-    puts = "How old are you?"
-    user_age = gets.chomp.to_i
+#     # Gets users star sign
+#     puts "\nLastly, what is your star sign?"
+#     puts "\nAries March 21 - April 19", "\nTaurus April 20 - May - 20", "\nGemini May 21 - June 20", "\nCancer June 21 - July 22", "\nLeo July 23 - August 22", "\nVirgo August 23 - September 22", "\nLibra September 23 - October 22", "\nScorpio October 23 - November 21", "\nSagittarius November 22 - December", "\nCapricorn December 22 - January 19", "\nAquarius January 20 February 18", "\nPisces February 19 - March 20"
+#     user_star_sign = gets.chomp
+#     user_star_sign.capitalize
 
-    # age rule - algorithm based on men and woman identifying ages they would consider when evaluating someone for relationships
-    user_age_rule_min = user_age / 2 + 7
-    user_age_rule_max = user_age - 7 * 2
+# end
 
-    # Gets users star sign
-    puts "What is your star sign?"
-    puts "Aries March 21 - April 19", "\n2. Taurus April 20 - May - 20", "\n3. Gemini May 21 - June 20", "\n4. Cancer June 21 - July 22", "\n5. Leo July 23 - August 22", "\n6. Virgo August 23 - September 22", "\n7. Libra September 23 - October 22", "\n8. Scorpio October 23 - November 21", "\n9. Sagittarius November 22 - December", "\n10. Capricorn December 22 - January 19", "\n11. Aquarius January 20 February 18", "\n12. Pisces February 19 - March 20"
-    user_star_sign = gets.chomp.to_i
+# welcome_and_user_input_gender
+# user_age_and_star_sign
 
-end
 
-# Users' gender identified
 case
-when "M" [
+when "M" 
+    female_profiles = [
     # Provides matches to opposite gender when user identifies as hetero male
     # Female profiles - one for each star sign, ages go up in incements of 10 starting at 18 (the legal age considerating adult themes associated with dating apps), stops at 118 (accounting for if the oldest person in the world was to be a user), then for remaining star sign takes average of the age group most on dating apps 30 - 44.
         {
@@ -149,16 +157,15 @@ when "M" [
     user_age = 40
     user_star_sign = "Taurus"
     user_star_sign_matches = star_sign_matches[user_star_sign]
-    p user_star_sign_matches
+    # p user_star_sign_matches
     user_age_rule_min = (user_age / 2) + 7
     user_age_rule_max = (user_age - 7) * 2
     matched_profiles = female_profiles.filter do | female_profile |
+        puts female_profile[:name]
+        puts female_profile[:age]
         puts female_profile[:star_sign]
-        # puts female_profile[:name]
-        # puts female_profile[:age]
-        # puts female_profile[:star_sign]
         age_match = female_profile[:age] >= user_age_rule_min && female_profile[:age] <= user_age_rule_max
-        # star_sign_match = female_profile[:star_sign] == "Taurus"
+        star_sign_match = female_profile[:star_sign] == "Taurus"
         star_sign_match = user_star_sign_matches.include? female_profile[:star_sign]
         puts star_sign_match
        
@@ -166,11 +173,12 @@ when "M" [
 
     
     end
-    puts matched_profiles
+    puts "You've been matched with" + matched_profiles
+    
 
 when "F"
-Male profiles - one for each star sign, ages go up in incements of 10 starting at 18 (the legal age considerating adult themes associated with dating apps), stops at 118 (accounting for if the oldest person in the world was to be a user), then for remaining star sign takes average of the age group most on dating apps 30 - 44.
-    [
+# Male profiles - one for each star sign, ages go up in incements of 10 starting at 18 (the legal age considerating adult themes associated with dating apps), stops at 118 (accounting for if the oldest person in the world was to be a user), then for remaining star sign takes average of the age group most on dating apps 30 - 44.
+    male_profiles = [
         {
             name: "Jack",
             age: 18,
@@ -232,7 +240,6 @@ Male profiles - one for each star sign, ages go up in incements of 10 starting a
             star_sign: "Pisces"
         }
     ]
-
     star_sign_matches = {
         "Taurus" => [
             "Cancer",
@@ -286,9 +293,9 @@ Male profiles - one for each star sign, ages go up in incements of 10 starting a
             "Capricorn"
         ]   
     }  
-
-when "O"
-    [
+when "O" 
+    # When user identifies gender as O for other, provides matches to profiles of either/both genders.
+    female_and_male_profiles = [
         {
             name: "Jack",
             age: 18,
@@ -463,8 +470,13 @@ when "O"
             "Taurus",
             "Capricorn"
         ]   
-    
-    
+    }
 
+else
+    # print error message for invalid input
+    # re-print options
+    puts "Invalid input, please enter your gender M for Male, F Female or O for Other"
+    puts "Press any key to continue"
+    gets
 
 end
