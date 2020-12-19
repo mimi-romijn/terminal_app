@@ -28,10 +28,9 @@ end
 
 # Users' gender identified
 case
-when "M"
+when "M" [
     # Provides matches to opposite gender when user identifies as hetero male
-    # female_profiles = [18{"Fiona" => "Aries"}], 28{"Mel" => "Taurus"}, 38{"Jane" => "Gemini"}, "Molly" => "Cancer", "Isobel" => "Leo", "Harriet" => "Virgo", "Sophie" => "Libra", "Kate" => "Scorpio", "Georgia" => "Sagittarius", "Zoe" => "Capricorn", "Hannah" => "Aquarius", "Julie" => "Pisces"}
-    female_profiles = [
+    # Female profiles - one for each star sign, ages go up in incements of 10 starting at 18 (the legal age considerating adult themes associated with dating apps), stops at 118 (accounting for if the oldest person in the world was to be a user), then for remaining star sign takes average of the age group most on dating apps 30 - 44.
         {
             name: "Fiona",
             age: 18,
@@ -40,6 +39,56 @@ when "M"
         {
             name: "Mel",
             age: 28,
+            star_sign: "Taurus"
+        },
+        {
+            name: "Rachel",
+            age: 38,
+            star_sign: "Gemini"
+        },
+        {
+            name: "Molly",
+            age: 48,
+            star_sign: "Cancer"
+        },
+        {
+            name: "Isobel",
+            age: 58,
+            star_sign: "Leo"
+        },
+        {
+            name: "Harriet",
+            age: 68,
+            star_sign: "Virgo"
+        },
+        {
+            name: "Sophie",
+            age: 78,
+            star_sign: "Libra"
+        },
+        {
+            name: "Kate",
+            age: 88,
+            star_sign: "Scorpio"
+        },
+        {
+            name: "Donna",
+            age: 98,
+            star_sign: "Sagittarius"
+        },
+        {
+            name: "Pheobe",
+            age: 108,
+            star_sign: "Capricorn"
+        },
+        {
+            name: "Lola",
+            age: 118,
+            star_sign: "Aquarius"
+        },
+        {
+            name: "Nina",
+            age: 23,
             star_sign: "Pisces"
         }
     ]
@@ -62,15 +111,15 @@ when "M"
         "Leo" => [
             "Libra",
             "Gemini"
-        ]
+        ],
         "Virgo" => [
             "Scorpio",
             "Pisces"
-        ]
+        ],
         "Libra" => [
             "Leo",
             "Saggitarius"
-        ]
+        ],
         "Scorpio" => [
             "Cancer",
             "Virgo",
@@ -81,14 +130,21 @@ when "M"
             "Aries",
             "Leo",
             "Libra"
-        ]
-
-    
-        
+        ],
+        "Capricorn" => [
+            "Virgo",
+            "Scorpio",
+            "Pisces"
+        ],
+        "Aquarius" => [
+            "Aries",
+            "Sagittarius"
+        ],
+        "Pisces" => [
+            "Taurus",
+            "Capricorn"
+        ]   
     }
-
-    
-
 
     user_age = 40
     user_star_sign = "Taurus"
@@ -158,6 +214,125 @@ when "M"
 
 
 when "F"
+Male profiles - one for each star sign, ages go up in incements of 10 starting at 18 (the legal age considerating adult themes associated with dating apps), stops at 118 (accounting for if the oldest person in the world was to be a user), then for remaining star sign takes average of the age group most on dating apps 30 - 44.
+    [
+        {
+            name: "Jack",
+            age: 18,
+            star_sign: "Aries"
+        },
+        {
+            name: "Christian",
+            age: 28,
+            star_sign: "Taurus"
+        },
+        {
+            name: "Angus",
+            age: 38,
+            star_sign: "Gemini"
+        },
+        {
+            name: "Harry",
+            age: 48,
+            star_sign: "Cancer"
+        },
+        {
+            name: "Zac",
+            age: 58,
+            star_sign: "Leo"
+        },
+        {
+            name: "Mitchel",
+            age: 68,
+            star_sign: "Virgo"
+        },
+        {
+            name: "Chris",
+            age: 78,
+            star_sign: "Libra"
+        },
+        {
+            name: "Logan",
+            age: 88,
+            star_sign: "Scorpio"
+        },
+        {
+            name: "Todd",
+            age: 98,
+            star_sign: "Sagittarius"
+        },
+        {
+            name: "Charles",
+            age: 108,
+            star_sign: "Capricorn"
+        },
+        {
+            name: "Billy",
+            age: 118,
+            star_sign: "Aquarius"
+        },
+        {
+            name: "Hugh",
+            age: 23,
+            star_sign: "Pisces"
+        }
+    ]
+
+    star_sign_matches = {
+        "Taurus" => [
+            "Cancer",
+            "Scorpio",
+            "Pisces"
+        ],
+        "Gemini" => [
+            "Aries",
+            "Leo",
+            "Sagittarius"
+        ],
+        "Cancer" => [
+            "Taurus",
+            "Virgo",
+            "Capricorn"
+        ],
+        "Leo" => [
+            "Libra",
+            "Gemini"
+        ],
+        "Virgo" => [
+            "Scorpio",
+            "Pisces"
+        ],
+        "Libra" => [
+            "Leo",
+            "Saggitarius"
+        ],
+        "Scorpio" => [
+            "Cancer",
+            "Virgo",
+            "Capricorn",
+            "Pisces"
+        ],
+        "Sagittarius" => [
+            "Aries",
+            "Leo",
+            "Libra"
+        ],
+        "Capricorn" => [
+            "Virgo",
+            "Scorpio",
+            "Pisces"
+        ],
+        "Aquarius" => [
+            "Aries",
+            "Sagittarius"
+        ],
+        "Pisces" => [
+            "Taurus",
+            "Capricorn"
+        ]   
+    }
+
+
     # Provides matches to opposite gender when users identifies as hetero female
     # male_profiles = {"Hugh" => "Aries", "Angus" => "Taurus", "Max" => "Gemini", "Paul" => "Cancer", "Will" => "Leo", "Matt" => "Virgo", "George" => "Libra", "Jack" => "Scorpio", "Luke" => "Sagittarius", "Tom" => "Capricorn", "Julian" => "Aquarius", "Alfie" => "Pisces"}
 
