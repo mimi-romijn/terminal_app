@@ -151,6 +151,9 @@ when "M"
         "Pisces" => [
             "Taurus",
             "Capricorn"
+        ],
+        "Aries" => [
+            "Libra"
         ]   
     }
 
@@ -168,8 +171,8 @@ when "M"
         # age_match = female_profile[:age] >= user_age_rule_min && female_profile[:age] <= user_age_rule_max
         star_sign_match = female_profile[:star_sign] == "Taurus"
         star_sign_match = user_star_sign_matches.include? female_profile[:star_sign]
-        puts star_sign_match
-        puts"You've been matched with"
+        # puts star_sign_match.to_s
+        puts"You've been matched with #{star_sign_match}"
         # return age_match && star_sign_match 
     end
     
