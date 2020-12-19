@@ -158,7 +158,7 @@ when "M"
     }
 
     user_age = 40
-    user_star_sign = "Taurus"
+    user_star_sign = "Capricorn"
     user_star_sign_matches = star_sign_matches[user_star_sign]
     # p user_star_sign_matches
     user_age_rule_min = (user_age / 2) + 7
@@ -169,11 +169,15 @@ when "M"
         # puts female_profile[:star_sign]
         age_match = female_profile[:age] >= user_age_rule_min && female_profile[:age] <= user_age_rule_max
         # age_match = female_profile[:age] >= user_age_rule_min && female_profile[:age] <= user_age_rule_max
-        star_sign_match = female_profile[:star_sign] == "Taurus"
+        star_sign_match = female_profile[:star_sign] == "Cancer"
         star_sign_match = user_star_sign_matches.include? female_profile[:star_sign]
         # puts star_sign_match.to_s
-        puts"You've been matched with #{star_sign_match}"
         # return age_match && star_sign_match 
+        if female_profile == age_match && star_sign_match
+            puts"You've been matched with"
+        else
+            puts"Sorry you've got no matches. Better luck in real life!"
+        end
     end
     
 
@@ -292,7 +296,10 @@ when "F"
         "Pisces" => [
             "Taurus",
             "Capricorn"
-        ]   
+        ],
+    "Aries" => [
+        "Libra"
+    ]   
     }  
 when "O" 
     # When user identifies gender as O for other, provides matches to profiles of either/both genders.
@@ -470,7 +477,10 @@ when "O"
         "Pisces" => [
             "Taurus",
             "Capricorn"
-        ]   
+        ],
+        "Aries" => [
+            "Libra"
+    ]      
     }
 
 else
