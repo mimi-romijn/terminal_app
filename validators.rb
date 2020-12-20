@@ -36,7 +36,7 @@ module Validators
 
     # def self.validate_input(user_star_sign_input)
     #     str_star_sign = user_star_sign_input
-    #     if (str_star_sign != "Aries" || str_star_sign != "Taurus" || str_star_sign != "Gemini" || str_star_sign != "Cancer" || str_star_sign != "Leo" || str_star_sign != "Virgo" || str_star_sign != "Libra" || str_star_sign != "Scorpio" || str_star_sign != "Sagittarius" || str_star_sign != "Capricorn" || str_star_sign != "Aquarius" || str_star_sign != "Pisces")
+    #     if str_star_sign != "Aries" && str_star_sign != "Taurus" && str_star_sign != "Gemini" && str_star_sign != "Cancer" && str_star_sign != "Leo" && str_star_sign != "Virgo" && str_star_sign != "Libra" && str_star_sign != "Scorpio" && str_star_sign != "Sagittarius" && str_star_sign != "Capricorn" && str_star_sign != "Aquarius" && str_star_sign != "Pisces"
     #         return false
     #         puts "Invalid. Please type your star sign."
     #     else

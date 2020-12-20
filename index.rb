@@ -5,7 +5,7 @@ system("clear")
 def welcome_and_user_input_gender
     while true
 puts "\nListen up if you're looking to fall in love, you want to start dating or you're ready to start a relationship you're at the right place!\nPlease select your gender."
-# Gets users gender so can be matched with someone of the opposite gender. Note MVP is not inclusive, it is purley for hetero singles.
+# Gets users gender from the options M for Male, F for Female and O for Other, so they can be matched with someone of the opposite gender or in identifying as Other gender matched with either gender. Note MVP is not inclusive, it is purley for heterosexual singles.
 puts = "Gender"
     puts"M"
     puts"F"
@@ -20,6 +20,7 @@ puts = "Gender"
 end
 
 def user_age_and_star_sign
+    # Gets users age
     puts "\nHow old are you?"
     user_age = gets.chomp.to_i
     # Gets users star sign
@@ -29,23 +30,7 @@ def user_age_and_star_sign
     return user_age, user_star_sign.capitalize
 end
 
-# def user_age_input
-#     #Gets users age
-#     puts "\nHow old are you?"
-#     user_age = gets.chomp.to_i
-#     # input_valid = Validators.validate_input(user_age)
-#     #  if input_valid
-#     # end
 
-# def user_star_sign_input
-#     # Gets users star sign
-#     puts "\nLastly, what is your star sign?"
-#     puts "\nAries March 21 - April 19", "\nTaurus April 20 - May - 20", "\nGemini May 21 - June 20", "\nCancer June 21 - July 22", "\nLeo July 23 - August 22", "\nVirgo August 23 - September 22", "\nLibra September 23 - October 22", "\nScorpio October 23 - November 21", "\nSagittarius November 22 - December", "\nCapricorn December 22 - January 19", "\nAquarius January 20 February 18", "\nPisces February 19 - March 20"
-#     user_star_sign = gets.chomp
-#     user_star_sign.capitalize
-#     # input_valid = Validators.validate_input(iser_star_sign.capitalize)
-#     #  if input_valid
-#     # end
 
 
 user_gender = welcome_and_user_input_gender
