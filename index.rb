@@ -1,8 +1,9 @@
-# require './validators'
+require './validators'
 
 system("clear")
 
 def welcome_and_user_input_gender
+    while true
 puts "\nListen up if you're looking to fall in love, you want to start dating or you're ready to start a relationship you're at the right place!\nPlease select your gender."
 # Gets users gender so can be matched with someone of the opposite gender. Note MVP is not inclusive, it is purley for hetero singles.
 puts = "Gender"
@@ -10,12 +11,15 @@ puts = "Gender"
     puts"F"
     puts"O"
     user_gender = gets.chomp
-    user_gender.capitalize
-
-    #  input_valid = Validators.validate_input(user_gender.capitalize)
+    input_valid = Validators.validate_input(user_gender.capitalize)
+    if input_valid
+        puts input_valid
+        return user_gender.capitalize
+    end
+  end
+end
     #  if input_valid
     # end
-end
 
 def user_age_and_star_sign
     puts "\nHow old are you?"
@@ -24,7 +28,8 @@ def user_age_and_star_sign
     puts "\nLastly, what is your star sign?"
     puts "\nAries March 21 - April 19", "\nTaurus April 20 - May - 20", "\nGemini May 21 - June 20", "\nCancer June 21 - July 22", "\nLeo July 23 - August 22", "\nVirgo August 23 - September 22", "\nLibra September 23 - October 22", "\nScorpio October 23 - November 21", "\nSagittarius November 22 - December", "\nCapricorn December 22 - January 19", "\nAquarius January 20 February 18", "\nPisces February 19 - March 20"
     user_star_sign = gets.chomp
-    user_star_sign.capitalize
+    return user_age, user_age_and_star_sign.capitalize
+    # user_star_sign.capitalize
 end
 
 # def user_age_input
@@ -46,12 +51,12 @@ end
 #     # end
 
 
-welcome_and_user_input_gender
-user_age_and_star_sign
+user_gender = welcome_and_user_input_gender
+user_age, user_star_sign = user_age_and_star_sign
 
 # user_gender_identified = welcome_and_user_input_genderI(user_gender)
 
-case
+case user_gender
 when "M"
 # if user_gender_identified == "M"
     female_profiles = [
@@ -176,10 +181,10 @@ when "M"
     }
 
     list_of_matches = []
-    user_age = 40
-    user_star_sign = "Capricorn"
+    # user_age = 40
+    # user_star_sign = "Capricorn"
     #=> Virgo Scorpio Pisces
-    user_star_sign_matches = star_sign_matches[user_star_sign]
+    user_star_sign_matches = star_sign_matches[user_star_sign.capitalize]
     #=> 27
     user_age_rule_min = (user_age / 2) + 7
     #=> 66
@@ -321,10 +326,10 @@ when "F"
     ]   
     }  
     list_of_matches = []
-    user_age = 40
-    user_star_sign = "Capricorn"
+    # user_age = 40
+    # user_star_sign = "Capricorn"
     #=> Virgo Scorpio Pisces
-    user_star_sign_matches = star_sign_matches[user_star_sign]
+    user_star_sign_matches = star_sign_matches[user_star_sign.capitalize]
     #=> 27
     user_age_rule_min = (user_age / 2) + 7
     #=> 66

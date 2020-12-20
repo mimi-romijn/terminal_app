@@ -2,7 +2,8 @@ module Validators
     def self.validate_input(welcome_and_user_input_gender)
         # convert input to string
         str_input = welcome_and_user_input_gender
-        if (str_input != "F" || str_input != "M" || str != "O")
+        puts str_input
+        if str_input != "F" && str_input != "M" && str_input != "O"
             puts"yessss"
             return false
         # if user input == F, M or O return true
@@ -42,8 +43,7 @@ module Validators
     # end
         
 
-    def Validators.validate_input(welcome_and_user_input_gender)
+    # def Validators.validate_input(welcome_and_user_input_gender)
     # def Validators.validate_input(user_age_input)
     # def Validators.validate_input(user_star_sign_input)
-end
 end
