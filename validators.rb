@@ -4,7 +4,7 @@ module Validators
         str_input = welcome_and_user_input_gender
         if (str_input != "F" || str_input != "M" || str != "O")
             puts"yessss"
-        # if integer == 1..4 return true
+        # if user input == F, M or O return true
         # else return false
 
         else

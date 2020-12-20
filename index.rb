@@ -1,40 +1,40 @@
-# require './validators'
+require './validators'
 
 system("clear")
 
-# def welcome_and_user_input_gender
-# puts "\nListen up if you're looking to fall in love, you want to start dating or you're ready to start a relationship you're at the right place!\nPlease select your gender."
-# # Gets users gender so can be matched with someone of the opposite gender. Note MVP is not inclusive, it is purley for hetero singles.
-# puts = "Gender"
-#     puts"M"
-#     puts"F"
-#     puts"O"
-#     user_gender = gets.chomp
-#     user_gender.capitalize
+def welcome_and_user_input_gender
+puts "\nListen up if you're looking to fall in love, you want to start dating or you're ready to start a relationship you're at the right place!\nPlease select your gender."
+# Gets users gender so can be matched with someone of the opposite gender. Note MVP is not inclusive, it is purley for hetero singles.
+puts = "Gender"
+    puts"M"
+    puts"F"
+    puts"O"
+    user_gender = gets.chomp
+    user_gender.capitalize
 
-#     #  input_valid = Validators.validate_input(welcome_and_user_input_gender)
-#     #  if !input_valid
-#     #     puts "Invalid. Try Again"
-#     # end
-# end
+     input_valid = Validators.validate_input(welcome_and_user_input_gender)
+     if !input_valid
+        puts "Invalid. Try Again"
+    end
+end
 
-# def user_age_and_star_sign
-#     puts "\nHow old are you?"
-#     user_age = gets.chomp.to_i
+def user_age_and_star_sign
+    puts "\nHow old are you?"
+    user_age = gets.chomp.to_i
     
-#     # Gets users star sign
-#     puts "\nLastly, what is your star sign?"
-#     puts "\nAries March 21 - April 19", "\nTaurus April 20 - May - 20", "\nGemini May 21 - June 20", "\nCancer June 21 - July 22", "\nLeo July 23 - August 22", "\nVirgo August 23 - September 22", "\nLibra September 23 - October 22", "\nScorpio October 23 - November 21", "\nSagittarius November 22 - December", "\nCapricorn December 22 - January 19", "\nAquarius January 20 February 18", "\nPisces February 19 - March 20"
-#     user_star_sign = gets.chomp
-#     user_star_sign.capitalize
+    # Gets users star sign
+    puts "\nLastly, what is your star sign?"
+    puts "\nAries March 21 - April 19", "\nTaurus April 20 - May - 20", "\nGemini May 21 - June 20", "\nCancer June 21 - July 22", "\nLeo July 23 - August 22", "\nVirgo August 23 - September 22", "\nLibra September 23 - October 22", "\nScorpio October 23 - November 21", "\nSagittarius November 22 - December", "\nCapricorn December 22 - January 19", "\nAquarius January 20 February 18", "\nPisces February 19 - March 20"
+    user_star_sign = gets.chomp
+    user_star_sign.capitalize
 
-# end
+end
 
-# welcome_and_user_input_gender
-# user_age_and_star_sign
+welcome_and_user_input_gender
+user_age_and_star_sign
 
 
-case
+case welcome_and_user_input_gender
 when "M" 
     female_profiles = [
     # Provides matches to opposite gender when user identifies as hetero male
@@ -521,7 +521,7 @@ when "O"
         age_match = female_and_male_profile[:age] >= user_age_rule_min && male_profile[:age] <= user_age_rule_max
         star_sign_match = user_star_sign_matches.include? female_and_male_profile[:star_sign]
         if age_match && star_sign_match
-        list_of_matches << feamel_and_male_profile
+        list_of_matches << female_and_male_profile
         end
     end
     
@@ -538,5 +538,6 @@ else
     puts "Invalid input, please enter your gender M for Male, F Female or O for Other"
     puts "Press any key to continue"
     gets
+    welcome_and_user_input_gender()
 
 end
