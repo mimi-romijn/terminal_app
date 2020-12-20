@@ -100,6 +100,7 @@ when "M"
             star_sign: "Pisces"
         }
     ]
+    # Star signs and the star signs considered the most compatible with them.
     star_sign_matches = {
         "Taurus" => [
             "Cancer",
@@ -164,7 +165,7 @@ when "M"
     user_age_rule_min = (user_age / 2) + 7
     # Gets a max compared to users age
     user_age_rule_max = (user_age - 7) * 2
-
+    # Filter gathering which profiles, if any, are compatible in terms of age and star sign with the user
     matched_profiles = female_profiles.filter do | female_profile |
         age_match = female_profile[:age] >= user_age_rule_min && female_profile[:age] <= user_age_rule_max
         star_sign_match = user_star_sign_matches.include? female_profile[:star_sign]
@@ -172,17 +173,17 @@ when "M"
         list_of_matches << female_profile
         end
     end
-    
+    # Prints statement if there are no matches with the user.
     if list_of_matches.length == 0
         puts "No one matched with you"
+    # Prints match/matches when the user is compatible with a profile
     else
     list_of_matches.each do |x|
         puts "#{x[:name]} who is #{x[:age]} and star sign #{x[:star_sign]} has matched with you!"
     end
     end
 when "F"    
-# elsif user_gender_identified == "M"
-# Male profiles - one for each star sign, ages go up in incements of 10 starting at 18 (the legal age considerating adult themes associated with dating apps), stops at 118 (accounting for if the oldest person in the world was to be a user), then for remaining star sign takes average of the age group most on dating apps 30 - 44.
+# Male profiles - same factors as female profiles: age and star sign.
     male_profiles = [
         {
             name: "Jack",
@@ -326,7 +327,6 @@ when "F"
     end
     end
 when "O"
-# elsif user_gender_identified == "O" 
     # When user identifies gender as O for other, provides matches to profiles of either/both genders.
     female_and_male_profiles = [
         {
