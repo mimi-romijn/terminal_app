@@ -1,4 +1,4 @@
-require './validators'
+# require './validators'
 
 system("clear")
 
@@ -12,38 +12,48 @@ puts = "Gender"
     user_gender = gets.chomp
     user_gender.capitalize
 
-     input_valid = Validators.validate_input(user_gender.capitalize)
-     if input_valid
-    end
+    #  input_valid = Validators.validate_input(user_gender.capitalize)
+    #  if input_valid
+    # end
 end
 
-def user_age_input
-    #Gets users age
+def user_age_and_star_sign
     puts "\nHow old are you?"
     user_age = gets.chomp.to_i
-    input_valid = Validators.validate_input(user_age)
-     if input_valid
-    end
-
-def user_star_sign_input
     # Gets users star sign
     puts "\nLastly, what is your star sign?"
     puts "\nAries March 21 - April 19", "\nTaurus April 20 - May - 20", "\nGemini May 21 - June 20", "\nCancer June 21 - July 22", "\nLeo July 23 - August 22", "\nVirgo August 23 - September 22", "\nLibra September 23 - October 22", "\nScorpio October 23 - November 21", "\nSagittarius November 22 - December", "\nCapricorn December 22 - January 19", "\nAquarius January 20 February 18", "\nPisces February 19 - March 20"
     user_star_sign = gets.chomp
     user_star_sign.capitalize
-    input_valid = Validators.validate_input(iser_star_sign.capitalize)
-     if input_valid
-    end
-
 end
+
+# def user_age_input
+#     #Gets users age
+#     puts "\nHow old are you?"
+#     user_age = gets.chomp.to_i
+#     # input_valid = Validators.validate_input(user_age)
+#     #  if input_valid
+#     # end
+
+# def user_star_sign_input
+#     # Gets users star sign
+#     puts "\nLastly, what is your star sign?"
+#     puts "\nAries March 21 - April 19", "\nTaurus April 20 - May - 20", "\nGemini May 21 - June 20", "\nCancer June 21 - July 22", "\nLeo July 23 - August 22", "\nVirgo August 23 - September 22", "\nLibra September 23 - October 22", "\nScorpio October 23 - November 21", "\nSagittarius November 22 - December", "\nCapricorn December 22 - January 19", "\nAquarius January 20 February 18", "\nPisces February 19 - March 20"
+#     user_star_sign = gets.chomp
+#     user_star_sign.capitalize
+#     # input_valid = Validators.validate_input(iser_star_sign.capitalize)
+#     #  if input_valid
+#     # end
+
 
 welcome_and_user_input_gender
-user_age_input
-user_star_sign_input
-end
+user_age_and_star_sign
 
-case welcome_and_user_input_gender
-when "M" 
+# user_gender_identified = welcome_and_user_input_genderI(user_gender)
+
+case
+when "M"
+# if user_gender_identified == "M"
     female_profiles = [
     # Provides matches to opposite gender when user identifies as hetero male
     # Female profiles - one for each star sign, ages go up in incements of 10 starting at 18 (the legal age considerating adult themes associated with dating apps), stops at 118 (accounting for if the oldest person in the world was to be a user), then for remaining star sign takes average of the age group most on dating apps 30 - 44.
@@ -189,8 +199,8 @@ when "M"
         puts "#{x[:name]} who is #{x[:age]} and star sign #{x[:star_sign]} has matched with you!"
     end
     end
-    
-when "F"
+when "F"    
+# elsif user_gender_identified == "M"
 # Male profiles - one for each star sign, ages go up in incements of 10 starting at 18 (the legal age considerating adult themes associated with dating apps), stops at 118 (accounting for if the oldest person in the world was to be a user), then for remaining star sign takes average of the age group most on dating apps 30 - 44.
     male_profiles = [
         {
@@ -334,8 +344,8 @@ when "F"
         puts "#{x[:name]} who is #{x[:age]} and star sign #{x[:star_sign]} has matched with you!"
     end
     end
-
-when "O" 
+when "O"
+# elsif user_gender_identified == "O" 
     # When user identifies gender as O for other, provides matches to profiles of either/both genders.
     female_and_male_profiles = [
         {
@@ -539,12 +549,14 @@ when "O"
     list_of_matches.each do |x|
         puts "#{x[:name]} who is #{x[:age]} and star sign #{x[:star_sign]} has matched with you!"
     end
-    end
+end
 else
     # print error message for invalid input
     # re-print options
-    puts "Invalid input, please try again.≈"
+    puts "Invalid input, please try again."
     puts "Press any key to continue"
     gets
     welcome_and_user_input_gender()
+    user_age_and_star_sign()
     end
+
