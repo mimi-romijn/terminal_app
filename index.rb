@@ -12,14 +12,12 @@ puts = "Gender"
     puts"O"
     user_gender = gets.chomp
     input_valid = Validators.validate_input(user_gender.capitalize)
+    puts input_valid
     if input_valid
-        puts input_valid
         return user_gender.capitalize
     end
   end
 end
-    #  if input_valid
-    # end
 
 def user_age_and_star_sign
     puts "\nHow old are you?"
@@ -184,7 +182,7 @@ when "M"
     # user_age = 40
     # user_star_sign = "Capricorn"
     #=> Virgo Scorpio Pisces
-    user_star_sign_matches = star_sign_matches[user_star_sign.capitalize]
+    user_star_sign_matches = star_sign_matches[user_star_sign]
     #=> 27
     user_age_rule_min = (user_age / 2) + 7
     #=> 66
@@ -329,7 +327,7 @@ when "F"
     # user_age = 40
     # user_star_sign = "Capricorn"
     #=> Virgo Scorpio Pisces
-    user_star_sign_matches = star_sign_matches[user_star_sign.capitalize]
+    user_star_sign_matches = star_sign_matches[user_star_sign]
     #=> 27
     user_age_rule_min = (user_age / 2) + 7
     #=> 66
@@ -532,8 +530,8 @@ when "O"
     ]      
     }
     list_of_matches = []
-    user_age = 40
-    user_star_sign = "Capricorn"
+    # user_age = 40
+    # user_star_sign = "Capricorn"
     #=> Virgo Scorpio Pisces
     user_star_sign_matches = star_sign_matches[user_star_sign]
     #=> 27
