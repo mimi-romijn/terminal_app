@@ -1,18 +1,17 @@
 # Dating App
-Dating App takes user input and generates most compatible match based on their secxual preference, their age and their star sign.
+Dating App takes user input and generates most compatible match based on their sexual preference, their age and their star sign.
 
 ## Statement of purpose and scope
 Dating App, run from the terminal
 
 ## Features List - MVP (Minimjum Viable Porduct)
-- As a user, I want to be able to get matched with someone of my sexual preference
-- As a user, I want to be able to get matched with someone within age bracket
-- As a user, I want to be able to get matched with someone of a compatible star sign to mine
+- As a user, I want to be able to get matched with someone of my sexual preference.
+- As a user, I want to be able to get matched with someone within appropraite age bracket.
+- As a user, I want to be able to get matched with someone of a compatible star sign to mine.
 
 ## Features List - nice to haves
-- As a user, would like to choose a Covidsafe date and be matched with someone who also choose the same date
-- As a user, I would like to be given the compatibility as a percentage with potential matches
-- As a user, I'd like to see colourful text so my banking expoerience doesn't put me to sleep appeals to me more 
+- As a user, would like to choose a Covidsafe date and be matched with someone who also choose the same date.
+- As a user, I would like to be given the compatibility as a percentage with potential matches accoring to our star signs.
 
 ## User Experience Details
 - The app gives clear instructions to the user

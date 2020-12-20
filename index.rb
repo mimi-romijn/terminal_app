@@ -327,7 +327,7 @@ when "F"
     end
     end
 when "O"
-    # When user identifies gender as O for other, provides matches to profiles of either/both genders.
+    # When user identifies their gender as O for Other. Matches to profiles of both genders when age is within range and star sign is compatible.
     female_and_male_profiles = [
         {
             name: "Jack",
@@ -508,13 +508,10 @@ when "O"
     ]      
     }
     list_of_matches = []
-    # user_age = 40
-    # user_star_sign = "Capricorn"
-    #=> Virgo Scorpio Pisces
     user_star_sign_matches = star_sign_matches[user_star_sign]
-    #=> 27
+
     user_age_rule_min = (user_age / 2) + 7
-    #=> 66
+
     user_age_rule_max = (user_age - 7) * 2
     matched_profiles = female_and_male_profiles.filter do | female_and_male_profile |
         age_match = female_and_male_profile[:age] >= user_age_rule_min && female_and_male_profile[:age] <= user_age_rule_max
