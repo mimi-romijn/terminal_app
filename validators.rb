@@ -4,7 +4,7 @@ module Validators
         str_input = welcome_and_user_input_gender
         puts str_input
         if str_input != "F" && str_input != "M" && str_input != "O"
-            puts"Invalid Input. Try again Enter either F for Female, M for Male O for Other"
+            puts"Invalid Input. Try again Enter either F for Female, M for Male or O for Other"
             return false
         # if user input == F, M or O return true
         # else return false

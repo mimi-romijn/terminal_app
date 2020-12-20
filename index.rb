@@ -26,8 +26,7 @@ def user_age_and_star_sign
     puts "\nLastly, what is your star sign?"
     puts "\nAries March 21 - April 19", "\nTaurus April 20 - May - 20", "\nGemini May 21 - June 20", "\nCancer June 21 - July 22", "\nLeo July 23 - August 22", "\nVirgo August 23 - September 22", "\nLibra September 23 - October 22", "\nScorpio October 23 - November 21", "\nSagittarius November 22 - December", "\nCapricorn December 22 - January 19", "\nAquarius January 20 February 18", "\nPisces February 19 - March 20"
     user_star_sign = gets.chomp
-    return user_age, user_age_and_star_sign.capitalize
-    # user_star_sign.capitalize
+    return user_age, user_star_sign.capitalize
 end
 
 # def user_age_input
@@ -539,7 +538,7 @@ when "O"
     #=> 66
     user_age_rule_max = (user_age - 7) * 2
     matched_profiles = female_and_male_profiles.filter do | female_and_male_profile |
-        age_match = female_and_male_profile[:age] >= user_age_rule_min && male_profile[:age] <= user_age_rule_max
+        age_match = female_and_male_profile[:age] >= user_age_rule_min && female_and_male_profile[:age] <= user_age_rule_max
         star_sign_match = user_star_sign_matches.include? female_and_male_profile[:star_sign]
         if age_match && star_sign_match
         list_of_matches << female_and_male_profile
