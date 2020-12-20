@@ -15,8 +15,9 @@ module Validators
     
     end
 
+    # NOT INCLUDED IN MVP 
     # def self.validate_input(user_age_input)
-    #     #validates users age and checks if 18 or over. The legal age considering adult themes associated with dating apps.
+    #     # Checks if user is 18 or over. The legal age considering adult themes associated with dating apps.
     #     int_input = user_age_input
     #     if (int_input < 18)
     #         return false
@@ -24,6 +25,7 @@ module Validators
     #     if test
             
     #     elsif (int_input > 118)
+    #    # Checks if user age is below 118, the oldest person in the world for legitimacy.
     #         return false
     #         puts "Send in your Birth Cirtificfate and we'll update... as you're older than the oldest person ever!"
             
@@ -41,9 +43,4 @@ module Validators
     #         return true
     #     end
     # end
-        
-
-    # def Validators.validate_input(welcome_and_user_input_gender)
-    # def Validators.validate_input(user_age_input)
-    # def Validators.validate_input(user_star_sign_input)
 end
