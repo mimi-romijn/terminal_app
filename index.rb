@@ -12,27 +12,35 @@ puts = "Gender"
     user_gender = gets.chomp
     user_gender.capitalize
 
-     input_valid = Validators.validate_input(welcome_and_user_input_gender)
-     if !input_valid
-        puts "Invalid. Try Again"
+     input_valid = Validators.validate_input(user_gender.capitalize)
+     if input_valid
     end
 end
 
-def user_age_and_star_sign
+def user_age_input
+    #Gets users age
     puts "\nHow old are you?"
     user_age = gets.chomp.to_i
-    
+    input_valid = Validators.validate_input(user_age)
+     if input_valid
+    end
+
+def user_star_sign_input
     # Gets users star sign
     puts "\nLastly, what is your star sign?"
     puts "\nAries March 21 - April 19", "\nTaurus April 20 - May - 20", "\nGemini May 21 - June 20", "\nCancer June 21 - July 22", "\nLeo July 23 - August 22", "\nVirgo August 23 - September 22", "\nLibra September 23 - October 22", "\nScorpio October 23 - November 21", "\nSagittarius November 22 - December", "\nCapricorn December 22 - January 19", "\nAquarius January 20 February 18", "\nPisces February 19 - March 20"
     user_star_sign = gets.chomp
     user_star_sign.capitalize
+    input_valid = Validators.validate_input(iser_star_sign.capitalize)
+     if input_valid
+    end
 
 end
 
 welcome_and_user_input_gender
-user_age_and_star_sign
-
+user_age_input
+user_star_sign_input
+end
 
 case welcome_and_user_input_gender
 when "M" 
@@ -535,9 +543,8 @@ when "O"
 else
     # print error message for invalid input
     # re-print options
-    puts "Invalid input, please enter your gender M for Male, F Female or O for Other"
+    puts "Invalid input, please try again.≈"
     puts "Press any key to continue"
     gets
     welcome_and_user_input_gender()
-
-end
+    end
