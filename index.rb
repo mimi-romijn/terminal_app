@@ -96,7 +96,7 @@ when "M"
         },
         {
             name: "Nina",
-            age: 23,
+            age: 28,
             star_sign: "Pisces"
         }
     ]
@@ -157,30 +157,31 @@ when "M"
         ]   
     }
 
+    list_of_matches = []
     user_age = 40
     user_star_sign = "Capricorn"
+    #=> Virgo Scorpio Pisces
     user_star_sign_matches = star_sign_matches[user_star_sign]
-    # p user_star_sign_matches
+    #=> 27
     user_age_rule_min = (user_age / 2) + 7
+    #=> 66
     user_age_rule_max = (user_age - 7) * 2
     matched_profiles = female_profiles.filter do | female_profile |
-        # puts female_profile[:name]
-        # puts female_profile[:age]
-        # puts female_profile[:star_sign]
         age_match = female_profile[:age] >= user_age_rule_min && female_profile[:age] <= user_age_rule_max
-        # age_match = female_profile[:age] >= user_age_rule_min && female_profile[:age] <= user_age_rule_max
-        star_sign_match = female_profile[:star_sign] == "Cancer"
         star_sign_match = user_star_sign_matches.include? female_profile[:star_sign]
-        # puts star_sign_match.to_s
-        # return age_match && star_sign_match 
-        if female_profile == age_match && star_sign_match
-            puts"You've been matched with"
-        else
-            puts"Sorry you've got no matches. Better luck in real life!"
+        if age_match && star_sign_match
+        list_of_matches << female_profile
         end
     end
     
-
+    if list_of_matches.length == 0
+        puts "No one matched with you"
+    else
+    list_of_matches.each do |x|
+        puts "#{x[:name]} who is #{x[:age]} and star sign #{x[:star_sign]} has matched with you!"
+    end
+    end
+    
 when "F"
 # Male profiles - one for each star sign, ages go up in incements of 10 starting at 18 (the legal age considerating adult themes associated with dating apps), stops at 118 (accounting for if the oldest person in the world was to be a user), then for remaining star sign takes average of the age group most on dating apps 30 - 44.
     male_profiles = [
@@ -301,6 +302,31 @@ when "F"
         "Libra"
     ]   
     }  
+    list_of_matches = []
+    user_age = 40
+    user_star_sign = "Capricorn"
+    #=> Virgo Scorpio Pisces
+    user_star_sign_matches = star_sign_matches[user_star_sign]
+    #=> 27
+    user_age_rule_min = (user_age / 2) + 7
+    #=> 66
+    user_age_rule_max = (user_age - 7) * 2
+    matched_profiles = male_profiles.filter do | male_profile |
+        age_match = male_profile[:age] >= user_age_rule_min && male_profile[:age] <= user_age_rule_max
+        star_sign_match = user_star_sign_matches.include? male_profile[:star_sign]
+        if age_match && star_sign_match
+        list_of_matches << male_profile
+        end
+    end
+    
+    if list_of_matches.length == 0
+        puts "No one matched with you"
+    else
+    list_of_matches.each do |x|
+        puts "#{x[:name]} who is #{x[:age]} and star sign #{x[:star_sign]} has matched with you!"
+    end
+    end
+
 when "O" 
     # When user identifies gender as O for other, provides matches to profiles of either/both genders.
     female_and_male_profiles = [
@@ -482,7 +508,30 @@ when "O"
             "Libra"
     ]      
     }
-
+    list_of_matches = []
+    user_age = 40
+    user_star_sign = "Capricorn"
+    #=> Virgo Scorpio Pisces
+    user_star_sign_matches = star_sign_matches[user_star_sign]
+    #=> 27
+    user_age_rule_min = (user_age / 2) + 7
+    #=> 66
+    user_age_rule_max = (user_age - 7) * 2
+    matched_profiles = female_and_male_profiles.filter do | female_and_male_profile |
+        age_match = female_and_male_profile[:age] >= user_age_rule_min && male_profile[:age] <= user_age_rule_max
+        star_sign_match = user_star_sign_matches.include? female_and_male_profile[:star_sign]
+        if age_match && star_sign_match
+        list_of_matches << feamel_and_male_profile
+        end
+    end
+    
+    if list_of_matches.length == 0
+        puts "No one matched with you"
+    else
+    list_of_matches.each do |x|
+        puts "#{x[:name]} who is #{x[:age]} and star sign #{x[:star_sign]} has matched with you!"
+    end
+    end
 else
     # print error message for invalid input
     # re-print options
