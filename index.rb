@@ -30,19 +30,14 @@ def user_age_and_star_sign
     return user_age, user_star_sign.capitalize
 end
 
-
-
-
 user_gender = welcome_and_user_input_gender
 user_age, user_star_sign = user_age_and_star_sign
 
-# user_gender_identified = welcome_and_user_input_genderI(user_gender)
 
 case user_gender
 when "M"
-# if user_gender_identified == "M"
+    # Provides matches to the opposite gender when user identifies as a heterosexual male
     female_profiles = [
-    # Provides matches to opposite gender when user identifies as hetero male
     # Female profiles - one for each star sign, ages go up in incements of 10 starting at 18 (the legal age considerating adult themes associated with dating apps), stops at 118 (accounting for if the oldest person in the world was to be a user), then for remaining star sign takes average of the age group most on dating apps 30 - 44.
         {
             name: "Fiona",
@@ -163,14 +158,13 @@ when "M"
     }
 
     list_of_matches = []
-    # user_age = 40
-    # user_star_sign = "Capricorn"
-    #=> Virgo Scorpio Pisces
     user_star_sign_matches = star_sign_matches[user_star_sign]
-    #=> 27
+    # Relationship Age Rule - Based on men and woman identifying ages they would consider when evaluating someone for relationships.
+    # Gets a min compared to users age
     user_age_rule_min = (user_age / 2) + 7
-    #=> 66
+    # Gets a max compared to users age
     user_age_rule_max = (user_age - 7) * 2
+
     matched_profiles = female_profiles.filter do | female_profile |
         age_match = female_profile[:age] >= user_age_rule_min && female_profile[:age] <= user_age_rule_max
         star_sign_match = user_star_sign_matches.include? female_profile[:star_sign]
