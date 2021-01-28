@@ -20,12 +20,11 @@ Dating App, run from the terminal
 - The app handles errors gracefully, and gives helpful error messages to the user
 
 ## Control flow diagram
-
-- TODO: insert the finsihed control flow diagram
+- https://app.diagrams.net/#G19FhSiTQoijT55mMUpur_tfYPYJiMbntl
 
 ## Implementation plan
 
-- trello
+- trello http://trello.com/b/l8mHaZLE/assignment-3-semester-1
 
 ## How to install and use 
 
