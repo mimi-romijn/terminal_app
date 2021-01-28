@@ -3,6 +3,10 @@ require 'colorize'
 
 system("clear")
 
+users_name = "Anonymous"
+users_name = ARGV[0] if ARGV[0]
+puts"\n Welcome to my dating app #{users_name}"
+
 def welcome_and_user_input_gender
     while true
 puts "\nListen up if you're looking to fall in love, you want to start dating or you're ready to start a relationship you're at the right place!\nPlease select your gender."
@@ -26,7 +30,7 @@ def user_age_and_star_sign
     user_age = gets.chomp.to_i
     # Gets users star sign
     puts "\nLastly, what is your star sign?".colorize(:color => :light_red, :background => :light_white)
-    puts "\nAries March 21 - April 19", "\nTaurus April 20 - May - 20", "\nGemini May 21 - June 20", "\nCancer June 21 - July 22", "\nLeo July 23 - August 22", "\nVirgo August 23 - September 22", "\nLibra September 23 - October 22", "\nScorpio October 23 - November 21", "\nSagittarius November 22 - December", "\nCapricorn December 22 - January 19", "\nAquarius January 20 February 18", "\nPisces February 19 - March 20".colorize(:color => :light_red, :background => :light_white)
+    puts "\nAries March 21 - April 19", "\nTaurus April 20 - May - 20", "\nGemini May 21 - June 20", "\nCancer June 21 - July 22", "\nLeo July 23 - August 22", "\nVirgo August 23 - September 22", "\nLibra September 23 - October 22", "\nScorpio October 23 - November 21", "\nSagittarius November 22 - December", "\nCapricorn December 22 - January 19", "\nAquarius January 20 February 18", "\nPisces February 19 - March 20"
     user_star_sign = gets.chomp
     return user_age, user_star_sign.capitalize
 end
