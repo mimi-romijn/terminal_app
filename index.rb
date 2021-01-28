@@ -1,4 +1,5 @@
 require './validators'
+require 'colorize'
 
 system("clear")
 
@@ -7,9 +8,9 @@ def welcome_and_user_input_gender
 puts "\nListen up if you're looking to fall in love, you want to start dating or you're ready to start a relationship you're at the right place!\nPlease select your gender."
 # Gets users gender from the options M for Male, F for Female and O for Other, so they can be matched with someone of the opposite gender or in identifying as Other gender matched with either gender. Note MVP is not inclusive, it is purley for heterosexual singles.
 puts = "Gender"
-    puts"M"
-    puts"F"
-    puts"O"
+    puts"M".colorize(:color => :blue, :background => :light_white)
+    puts"F".colorize(:color => :light_magenta, :background => :light_white)
+    puts"O".colorize(:color => :light_red, :background => :light_white)
     user_gender = gets.chomp
     input_valid = Validators.validate_input(user_gender.capitalize)
     puts input_valid
@@ -21,11 +22,11 @@ end
 
 def user_age_and_star_sign
     # Gets users age
-    puts "\nHow old are you?"
+    puts "\nHow old are you?".colorize(:color => :light_red, :background => :light_white)
     user_age = gets.chomp.to_i
     # Gets users star sign
-    puts "\nLastly, what is your star sign?"
-    puts "\nAries March 21 - April 19", "\nTaurus April 20 - May - 20", "\nGemini May 21 - June 20", "\nCancer June 21 - July 22", "\nLeo July 23 - August 22", "\nVirgo August 23 - September 22", "\nLibra September 23 - October 22", "\nScorpio October 23 - November 21", "\nSagittarius November 22 - December", "\nCapricorn December 22 - January 19", "\nAquarius January 20 February 18", "\nPisces February 19 - March 20"
+    puts "\nLastly, what is your star sign?".colorize(:color => :light_red, :background => :light_white)
+    puts "\nAries March 21 - April 19", "\nTaurus April 20 - May - 20", "\nGemini May 21 - June 20", "\nCancer June 21 - July 22", "\nLeo July 23 - August 22", "\nVirgo August 23 - September 22", "\nLibra September 23 - October 22", "\nScorpio October 23 - November 21", "\nSagittarius November 22 - December", "\nCapricorn December 22 - January 19", "\nAquarius January 20 February 18", "\nPisces February 19 - March 20".colorize(:color => :light_red, :background => :light_white)
     user_star_sign = gets.chomp
     return user_age, user_star_sign.capitalize
 end
@@ -175,7 +176,7 @@ when "M"
     end
     # Prints statement if there are no matches with the user.
     if list_of_matches.length == 0
-        puts "No one matched with you"
+        puts "No one matched with you".colorize(:color => :light_red, :background => :light_white)
     # Prints match/matches when the user is compatible with a profile
     else
     list_of_matches.each do |x|
@@ -320,7 +321,7 @@ when "F"
     end
     
     if list_of_matches.length == 0
-        puts "No one matched with you"
+        puts "No one matched with you".colorize(:color => :light_red, :background => :light_white)
     else
     list_of_matches.each do |x|
         puts "#{x[:name]} who is #{x[:age]} and star sign #{x[:star_sign]} has matched with you!"
@@ -522,7 +523,7 @@ when "O"
     end
     
     if list_of_matches.length == 0
-        puts "No one matched with you"
+        puts "No one matched with you".colorize(:color => :light_red, :background => :light_white)
     else
     list_of_matches.each do |x|
         puts "#{x[:name]} who is #{x[:age]} and star sign #{x[:star_sign]} has matched with you!"

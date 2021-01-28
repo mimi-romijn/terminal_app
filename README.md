@@ -12,6 +12,8 @@ Dating App, run from the terminal
 ## Features List - nice to haves
 - As a user, would like to choose a Covidsafe date and be matched with someone who also choose the same date.
 - As a user, I would like to be given the compatibility as a percentage with potential matches accoring to our star signs.
+- As a user, I would like to know that there is no one under 18 years of age and no one over 118 for legal and legitimate reasons.
+- As a user, I would like there be more profiles than just hard coded ones, perhaps implement gemfaker for this.
 
 ## User Experience Details
 - The app gives clear instructions to the user
