@@ -32,6 +32,9 @@ Dating App, run from the terminal
 Dependencies 
 - Ruby
 
+Gem 'colorizer'
+- gem install colorize
+
 To install and run
 - '$ gem install bundler'
 - '$ bundle install'
